@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_activity_uploaded_file"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tv_uploaded_files_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Uploaded Files"
+        android:gravity="center"
+        android:fontFamily="@font/roboto_slab_regular"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Filter Dropdown -->
+    <Spinner
+        android:id="@+id/spinner_filter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/file_categories"
+        app:layout_constraintTop_toBottomOf="@id/tv_uploaded_files_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.9"
+        android:layout_marginTop="16dp" />
+
+    <!-- Search Bar -->
+    <EditText
+        android:id="@+id/et_search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Tìm kiếm tệp..."
+        android:fontFamily="@font/quicksand_regular"
+        app:layout_constraintTop_toBottomOf="@id/spinner_filter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.9"
+        android:layout_marginTop="8dp" />
+
+    <!-- RecyclerView for File List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_uploaded_files"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/et_search"
+        app:layout_constraintBottom_toTopOf="@id/logoutButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.9"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Logout Button -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/logoutButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:fontFamily="@font/quicksand_bold"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/uploadFileButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/red_button" />
+
+    <!-- Logout Button -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/uploadFileButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Upload File"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/logoutButton"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/blue_button"
+        android:fontFamily="@font/quicksand_bold"
+        android:textSize="15sp"
+        android:textColor="@color/white"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

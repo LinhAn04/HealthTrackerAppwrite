@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <!-- Preview Image -->
+    <ImageView
+        android:id="@+id/iv_file_preview"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:contentDescription="Hình xem trước"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="8dp" />
+
+    <!-- File Name -->
+    <TextView
+        android:id="@+id/tv_file_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="File Name"
+        android:fontFamily="@font/quicksand_regular"
+        android:textSize="16sp"
+        app:layout_constraintTop_toTopOf="@id/iv_file_preview"
+        app:layout_constraintStart_toEndOf="@id/iv_file_preview"
+        app:layout_constraintEnd_toStartOf="@id/btn_delete_file"
+        app:layout_constraintBottom_toBottomOf="@id/iv_file_preview"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center_vertical" />
+
+    <!-- Delete Button -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_delete_file"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Xóa"
+        android:fontFamily="@font/quicksand_bold"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:background="@drawable/red_button"
+        app:layout_constraintTop_toTopOf="@id/iv_file_preview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/iv_file_preview"
+        android:layout_marginEnd="8dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
