@@ -27,4 +27,7 @@ public interface EventDAO {
 
     @Update
     void update(Event event);
+    @Query("SELECT * FROM event_table WHERE startTime >= :currentTime ORDER BY startTime ASC LIMIT 5")
+    List<Event> getUpcomingEvents(long currentTime);
+
 }

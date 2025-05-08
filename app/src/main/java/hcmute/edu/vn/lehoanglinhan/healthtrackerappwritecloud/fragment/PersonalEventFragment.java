@@ -19,7 +19,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -97,8 +101,17 @@ public class PersonalEventFragment extends Fragment {
                     newEvent.title = title;
                     newEvent.description = description;
                     newEvent.location = location;
-                    newEvent.startTime = startDate + " " + startTime;
-                    newEvent.endTime = endDate + " " + endTime;
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
+                    try {
+                        Date startDateTime = sdf.parse(startDate + " " + startTime);
+                        Date endDateTime = sdf.parse(endDate + " " + endTime);
+
+                        newEvent.startTime = startDateTime.getTime();
+                        newEvent.endTime = endDateTime.getTime();
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+
                     newEvent.isPersonal = isPersonal;  // Nếu "Personal" được chọn, isPersonal = true, nếu không = false
 
                     // Thêm sự kiện vào cơ sở dữ liệu

@@ -14,15 +14,15 @@ public class Event {
     public String title;
 
     public String description;
-    public String startTime;
-    public String endTime;
+    public long  startTime;
+    public long  endTime;
     public String location;
     public boolean isPersonal; // true = cá nhân, false = tổ chức
 
     public Event() {
     }
 
-    public Event(@NonNull String title, String description, String startTime, String endTime, String location, boolean isPersonal) {
+    public Event(@NonNull String title, String description, long  startTime, long  endTime, String location, boolean isPersonal) {
         this.title = title;
         this.description = description;
         this.startTime = startTime;
@@ -56,19 +56,19 @@ public class Event {
         this.description = description;
     }
 
-    public String getStartTime() {
+    public long getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(String startTime) {
+    public void setStartTime(long  startTime) {
         this.startTime = startTime;
     }
 
-    public String getEndTime() {
+    public long  getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(String endTime) {
+    public void setEndTime(long  endTime) {
         this.endTime = endTime;
     }
 

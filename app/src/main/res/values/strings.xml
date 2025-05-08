@@ -2,4 +2,6 @@
     <string name="app_name">HealthTrackerAppwriteCloud</string>
     <string name="appwrite_endpoint">https://fra.cloud.appwrite.io/v1</string>
     <string name="appwrite_project_id">6815a995001d1fe9a6eb</string>
+    <string name="id">931459783720-k0ca93stl78aknsddtagddj30o91n8rv.apps.googleusercontent.com</string>
+
 </resources>

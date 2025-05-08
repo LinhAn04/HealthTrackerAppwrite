@@ -9,6 +9,9 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+
     <application
         android:requestLegacyExternalStorage="true"
         android:allowBackup="true"
@@ -45,6 +48,7 @@
         <activity android:name=".view.FilePreviewActivity" />
         <activity android:name=".view.OverviewActivity"/>
         <activity android:name=".view.TicketActivity"/>
+        <receiver android:name=".receiver.EventReminderReceiver"/>
 
     </application>
 </manifest>

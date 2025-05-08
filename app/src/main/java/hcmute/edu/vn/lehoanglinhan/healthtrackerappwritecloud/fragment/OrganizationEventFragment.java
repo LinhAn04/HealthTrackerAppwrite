@@ -32,8 +32,12 @@ import com.google.api.services.gmail.model.Message;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Properties;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -154,8 +158,17 @@ public class OrganizationEventFragment extends Fragment {
                     newEvent.title = title;
                     newEvent.description = description;
                     newEvent.location = location;
-                    newEvent.startTime = startDate + " " + startTime;
-                    newEvent.endTime = endDate + " " + endTime;
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
+                    try {
+                        Date startDateTime = sdf.parse(startDate + " " + startTime);
+                        Date endDateTime = sdf.parse(endDate + " " + endTime);
+
+                        newEvent.startTime = startDateTime.getTime();
+                        newEvent.endTime = endDateTime.getTime();
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+
                     newEvent.isPersonal = isPersonal;  // Nếu "Personal" được chọn, isPersonal = true, nếu không = false
 
                     // Thêm sự kiện vào cơ sở dữ liệu
@@ -208,14 +221,14 @@ public class OrganizationEventFragment extends Fragment {
         final EditText eventLocation = dialogView.findViewById(R.id.event_location);
         final RadioGroup eventTypeGroup = dialogView.findViewById(R.id.event_type);
 
-        // Tách ngày & giờ từ chuỗi thời gian
-        String[] startParts = event.startTime.split(" ");
-        String[] endParts = event.endTime.split(" ");
+//        // Tách ngày & giờ từ chuỗi thời gian
+//        String[] startParts = event.startTime.split(" ");
+//        String[] endParts = event.endTime.split(" ");
 
-        eventStartDate.setText(startParts[0]);
-        eventStartTime.setText(startParts[1]);
-        eventEndDate.setText(endParts[0]);
-        eventEndTime.setText(endParts[1]);
+//        eventStartDate.setText(startParts[0]);
+//        eventStartTime.setText(startParts[1]);
+//        eventEndDate.setText(endParts[0]);
+//        eventEndTime.setText(endParts[1]);
 
         eventTitle.setText(event.title);
         eventDescription.setText(event.description);
@@ -234,8 +247,8 @@ public class OrganizationEventFragment extends Fragment {
                     event.title = eventTitle.getText().toString();
                     event.description = eventDescription.getText().toString();
                     event.location = eventLocation.getText().toString();
-                    event.startTime = eventStartDate.getText().toString() + " " + eventStartTime.getText().toString();
-                    event.endTime = eventEndDate.getText().toString() + " " + eventEndTime.getText().toString();
+//                    event.startTime = eventStartDate.getText().toString() + " " + eventStartTime.getText().toString();
+//                    event.endTime = eventEndDate.getText().toString() + " " + eventEndTime.getText().toString();
                     event.isPersonal = ((RadioButton) dialogView.findViewById(eventTypeGroup.getCheckedRadioButtonId())).getText().toString().equals("Personal");
 
                     executorService.execute(() -> db.eventDao().update(event));
