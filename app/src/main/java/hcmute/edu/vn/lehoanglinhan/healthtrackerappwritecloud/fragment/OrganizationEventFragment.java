@@ -50,7 +50,7 @@ import javax.mail.internet.MimeMessage;
 import hcmute.edu.vn.lehoanglinhan.healthtrackerappwritecloud.R;
 import hcmute.edu.vn.lehoanglinhan.healthtrackerappwritecloud.database.AppDatabase;
 import hcmute.edu.vn.lehoanglinhan.healthtrackerappwritecloud.model.Event;
-import hcmute.edu.vn.lehoanglinhan.healthtrackerappwritecloud.view.EventAdapter;
+import hcmute.edu.vn.lehoanglinhan.healthtrackerappwritecloud.adapter.EventAdapter;
 import hcmute.edu.vn.lehoanglinhan.healthtrackerappwritecloud.view.TicketActivity;
 
 public class OrganizationEventFragment extends Fragment {

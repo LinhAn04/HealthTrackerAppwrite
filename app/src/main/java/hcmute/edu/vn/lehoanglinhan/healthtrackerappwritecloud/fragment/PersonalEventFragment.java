@@ -30,7 +30,7 @@ import java.util.concurrent.Executors;
 import hcmute.edu.vn.lehoanglinhan.healthtrackerappwritecloud.R;
 import hcmute.edu.vn.lehoanglinhan.healthtrackerappwritecloud.database.AppDatabase;
 import hcmute.edu.vn.lehoanglinhan.healthtrackerappwritecloud.model.Event;
-import hcmute.edu.vn.lehoanglinhan.healthtrackerappwritecloud.view.EventAdapter;
+import hcmute.edu.vn.lehoanglinhan.healthtrackerappwritecloud.adapter.EventAdapter;
 
 public class PersonalEventFragment extends Fragment {
     private EditText eventStartDate, eventStartTime, eventEndDate, eventEndTime;

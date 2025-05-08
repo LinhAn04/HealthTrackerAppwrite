@@ -40,7 +40,7 @@ import java.util.concurrent.TimeUnit;
 import hcmute.edu.vn.lehoanglinhan.healthtrackerappwritecloud.R;
 import hcmute.edu.vn.lehoanglinhan.healthtrackerappwritecloud.database.AppDatabase;
 import hcmute.edu.vn.lehoanglinhan.healthtrackerappwritecloud.model.HealthData;
-import hcmute.edu.vn.lehoanglinhan.healthtrackerappwritecloud.view.HistoryAdapter;
+import hcmute.edu.vn.lehoanglinhan.healthtrackerappwritecloud.adapter.HistoryAdapter;
 
 public class HealthFragment extends Fragment {
     TextView caloriesTV, stepTV;

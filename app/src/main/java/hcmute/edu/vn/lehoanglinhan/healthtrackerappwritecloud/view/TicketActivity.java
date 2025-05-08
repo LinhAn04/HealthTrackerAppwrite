@@ -35,6 +35,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 import hcmute.edu.vn.lehoanglinhan.healthtrackerappwritecloud.R;
+import hcmute.edu.vn.lehoanglinhan.healthtrackerappwritecloud.adapter.TicketAdapter;
 import hcmute.edu.vn.lehoanglinhan.healthtrackerappwritecloud.database.AppDatabase;
 import hcmute.edu.vn.lehoanglinhan.healthtrackerappwritecloud.model.Ticket;
 

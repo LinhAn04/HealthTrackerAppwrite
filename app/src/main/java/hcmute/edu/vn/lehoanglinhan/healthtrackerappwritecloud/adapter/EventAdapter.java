@@ -1,4 +1,4 @@
-package hcmute.edu.vn.lehoanglinhan.healthtrackerappwritecloud.view;
+package hcmute.edu.vn.lehoanglinhan.healthtrackerappwritecloud.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
