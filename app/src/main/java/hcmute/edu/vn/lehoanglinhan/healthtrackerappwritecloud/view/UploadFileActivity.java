@@ -26,6 +26,7 @@ import java.util.UUID;
 
 import hcmute.edu.vn.lehoanglinhan.healthtrackerappwritecloud.controlelr.Appwrite;
 import hcmute.edu.vn.lehoanglinhan.healthtrackerappwritecloud.R;
+import hcmute.edu.vn.lehoanglinhan.healthtrackerappwritecloud.fragment.CloudFragment;
 import io.appwrite.models.InputFile;
 
 public class UploadFileActivity extends AppCompatActivity {
@@ -219,7 +220,7 @@ public class UploadFileActivity extends AppCompatActivity {
                     fileNameTextView.setText("Chưa chọn tệp");
                     selectedFileUri = null;
                     selectedFileName = null;
-                    startActivity(new Intent(UploadFileActivity.this, UploadedFilesActivity.class));
+                    startActivity(new Intent(UploadFileActivity.this, CloudFragment.class));
                 });
             });
         } catch (Exception e) {

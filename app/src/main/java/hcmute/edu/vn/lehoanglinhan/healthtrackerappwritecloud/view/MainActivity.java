@@ -52,7 +52,9 @@ public class MainActivity extends AppCompatActivity {
                             }
                             runOnUiThread(() -> {
                                 Toast.makeText(this, "Đăng nhập Google thành công", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(MainActivity.this, UploadedFilesActivity.class));
+                                Intent intent = new Intent(MainActivity.this, OverviewActivity.class);
+                                startActivity(intent);
+//                                startActivity(new Intent(MainActivity.this, UploadedFilesActivity.class));
                                 finish();
                             });
                         })
@@ -67,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             if (session != null) {
                 runOnUiThread(() -> {
                     Toast.makeText(this, "Đã đăng nhập, chuyển đến màn hình chính", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(MainActivity.this, UploadedFilesActivity.class));
+                    startActivity(new Intent(MainActivity.this, OverviewActivity.class));
                     finish();
                 });
             }

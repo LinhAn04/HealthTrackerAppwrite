@@ -5,7 +5,10 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
-
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <application
         android:requestLegacyExternalStorage="true"
         android:allowBackup="true"
@@ -38,9 +41,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".view.UploadedFilesActivity" />
         <activity android:name=".view.UploadFileActivity" />
         <activity android:name=".view.FilePreviewActivity" />
+        <activity android:name=".view.OverviewActivity"/>
+        <activity android:name=".view.TicketActivity"/>
 
     </application>
 </manifest>

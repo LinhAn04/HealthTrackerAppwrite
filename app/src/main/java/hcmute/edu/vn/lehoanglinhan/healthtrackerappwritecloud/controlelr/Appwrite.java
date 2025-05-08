@@ -3,6 +3,11 @@ package hcmute.edu.vn.lehoanglinhan.healthtrackerappwritecloud.controlelr;
 import android.content.Context;
 import android.util.Log;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.UUID;
+
+import hcmute.edu.vn.lehoanglinhan.healthtrackerappwritecloud.R;
 import io.appwrite.Client;
 import io.appwrite.coroutines.CoroutineCallback;
 import io.appwrite.exceptions.AppwriteException;
@@ -12,11 +17,6 @@ import io.appwrite.models.Session;
 import io.appwrite.models.User;
 import io.appwrite.services.Account;
 import io.appwrite.services.Storage;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.UUID;
-
 
 public class Appwrite {
     private static Client client;

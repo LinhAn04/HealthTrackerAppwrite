@@ -11,4 +11,16 @@
     <color name="darkblue">#004B7E</color>
     <color name="midblue">#1E83E6</color>
     <color name="red">#E61E1E</color>
+
+    <!-- Màu cơ bản -->
+    <color name="primary_color">#000000</color> <!-- Hồng đậm -->
+    <color name="secondary_color">#000000</color> <!-- Hồng nhạt -->
+    <color name="tertiary_color">#000000</color> <!-- Hồng rất nhạt -->
+    <color name="accent_color">#000000</color> <!-- Hồng neon -->
+
+    <!-- Màu nền -->
+    <color name="background_light">#FFF8F9</color> <!-- Hồng nhạt cho nền -->
+    <color name="background_dark">#B0003A</color> <!-- Hồng đậm tối hơn -->
+    <color name="dark_gray">#757575</color>
+
 </resources>
